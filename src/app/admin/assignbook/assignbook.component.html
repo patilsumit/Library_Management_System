@@ -1,0 +1,57 @@
+<div class="panel panel-default mt-3 ml-5">
+    <div class="panel-heading">Books Entry Form : You can add an Books detail information into this LMS Apps.</div>
+    <div class="panel-body">
+        <form class="form-horizontal" #addbookForm="ngForm">
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">User Name: </label>
+                <div class="col-sm-9">
+                    <!-- <input type="text" class="form-control w-50" [(ngModel)]="booking.username" name="username"> -->
+                    <select  class="form-control w-50" name="username" [(ngModel)]="booking.username">
+    
+                            <option *ngFor="let user of users" value={{user.user_name}}>{{user.user_name}}</option>
+                            
+                        </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="book_details" class="col-sm-2 control-label">Book Name : </label>
+                <div class="col-sm-9">
+                       
+                    <!-- <input type="text" class="form-control w-50" [(ngModel)]="booking.book_details" name="book_details">   -->
+                    <select  class="form-control w-50" name="book_details" [(ngModel)]="booking.book_details">
+    
+                            <option *ngFor="let data of books" value={{data.book_name}}>{{data.book_name}}</option>
+                            
+                        </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="book_status" class="col-sm-2 control-label">Book Due Date : </label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control w-50" [(ngModel)]="booking.due_date" name="book_status">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Transaction:</label>
+                 <div class="col-sm-9">
+                        <select [(ngModel)]="booking.dbtrans" class="form-control w-50" name="dbtrans">
+
+                                <option name="dbtrans" id="dbtrans" value="Borrow">Borrow</option>
+                                <option name="dbtrans" id="dbtrans" value="Return">Return</option>
+                            </select>
+                 </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <button type="submit" class="btn btn-success mr-2" (click)="addAssignBooks()">Save</button>
+                    <a class="btn btn-info" (click)="goBack()">Cancel</a>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

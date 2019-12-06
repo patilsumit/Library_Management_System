@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+        <thead>
+        <tr>
+          <td>Book Name</td>
+          <td>Book Author</td>
+          <td>Book Status</td>
+          <td width="275" align="center">Action</td>
+        </tr>
+        </thead>
+        <tbody>
+         <tr  *ngFor="let booking of bookings">
+          <td>{{booking.book_name}}</td>
+          <td>{{booking.book_author}}</td>
+          <td>{{booking.book_status}}</td> 
+          <td width="275"> 
+            <!-- <a class="btn btn-info mr-2" routerLink="employee/show/{{booking._id}}">Detail</a>  -->
+            <a class="btn btn-success mr-2"  (click)="toLink(booking._id)">Edit</a>
+            <a class="btn btn-danger " (click)="deleteBook(booking._id)">Delete</a>
+          </td>
+         </tr>
+        </tbody>
+      </table>

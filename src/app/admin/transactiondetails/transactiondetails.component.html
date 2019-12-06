@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+        <thead>
+        <tr>
+          <td>User Name</td>
+          <td>Book Name</td>
+          <td>Transaction Status</td>
+          <td>Transaction Date</td>
+          <td width="275" align="center">Action</td>
+        </tr>
+        </thead>
+        <tbody>
+         <tr  *ngFor="let tran of transacions">
+          <td>{{tran.username}}</td>
+          <td>{{tran.book_details}}</td>
+          <td>{{tran.dbtrans}}</td> 
+          <td>{{tran.date}}</td> 
+          <td width="275"> 
+            <!-- <a class="btn btn-info mr-2" routerLink="employee/show/{{booking._id}}">Detail</a>  -->
+            <a class="btn btn-success mr-2"  (click)="toLink(tran._id)">Edit</a>
+            <a class="btn btn-danger " (click)="deleteTransaction(tran._id)">Delete</a>
+          </td>
+         </tr>
+        </tbody>
+      </table>

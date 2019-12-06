@@ -1,0 +1,34 @@
+<div class="panel panel-default mt-3 ml-5">
+        <div class="panel-heading">Books Entry Form : You can add an Books detail information into this LMS Apps.</div>
+        <div class="panel-body">
+        <form class="form-horizontal"   #addbookForm="ngForm"  >
+        <div class="form-group">
+          <label for="book_name" class="col-sm-2 control-label">Book Full Name : </label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control w-50" [(ngModel)]="booking.book_name" name="book_name" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="book_author" class="col-sm-2 control-label">Book Author : </label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control w-50" [(ngModel)]="booking.book_author" name="position">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="book_status" class="col-sm-2 control-label">Book Status : </label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control w-50" [(ngModel)]="booking.book_status" name="book_status">
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-8">
+            <button type="submit" class="btn btn-success mr-2" (click)="updateBooks()">Update</button>  
+             <!-- <a class="btn btn-info" (click)="goBack()" >Cancel</a> -->
+          </div>
+         
+        </div>
+      </form>
+         
+        </div>
+      </div>
